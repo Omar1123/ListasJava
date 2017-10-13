@@ -73,6 +73,20 @@ public class ListaEstudiantes {
         }        
     }
     
-    
-    
+    public void promedioAlumnos() {
+        
+        int promedio;
+        promedio = 0;
+        
+        for(Estudiante estudiante: listaEstudiantes) {
+            
+            int notaFinal;
+            notaFinal = 0;
+            
+            notaFinal = estudiante.getPrimerParcial() + estudiante.getSegundoParcial() + estudiante.getExamenFinal() + estudiante.getZona();
+            promedio = promedio + notaFinal;
+            
+            
+        }
+    }           
 }
