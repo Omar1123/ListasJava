@@ -27,4 +27,11 @@ public class Menu {
         listaEstudiantes.mostrarAlumnos();
     }
     
+    public void promedioEstudiantes() {
+        listaEstudiantes.promedioAlumnos();
+    }
+    
+    public void ordenarPromedioEstudiantes() {
+        listaEstudiantes.ordenarPromedio();
+    }
 }

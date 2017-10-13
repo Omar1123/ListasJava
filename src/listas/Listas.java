@@ -20,6 +20,8 @@ public class Listas {
         Menu menu = new Menu();
         menu.agregarEstudiante();
         menu.mostrarEstudiantes();
+        menu.promedioEstudiantes();
+        menu.ordenarPromedioEstudiantes();
     }
     
 }

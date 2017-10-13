@@ -6,6 +6,7 @@
 package Manejador;
 
 import Objeto.Estudiante;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -91,5 +92,19 @@ public class ListaEstudiantes {
         promedio = promedio / listaEstudiantes.length;
         
         return promedio;
-    }           
+    }  
+    
+    public void ordenarPromedio() {
+        
+        Arrays.sort(listaEstudiantes);
+        System.out.println("Array ordenado por primer parcial");
+        
+        for(Estudiante estudiante: listaEstudiantes) {
+            System.out.println("Primer parcial: " + estudiante.getPrimerParcial());
+            System.out.println("Segundo parcial: " + estudiante.getSegundoParcial());
+            System.out.println("Examen final: " + estudiante.getExamenFinal());
+            System.out.println("Zona: " + estudiante.getZona());
+        }
+        
+    }
 }
