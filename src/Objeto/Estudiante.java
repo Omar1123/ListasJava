@@ -9,7 +9,7 @@ package Objeto;
  *
  * @author jake
  */
-public class Estudiante implements Comparable<Estudiante> {
+public class Estudiante {
 
     private int primerParcial;
     private int segundoParcial;
@@ -63,16 +63,7 @@ public class Estudiante implements Comparable<Estudiante> {
     }   
 
     @Override
-    public int compareTo(Estudiante o) {
-        
-        if(primerParcial < o.primerParcial) {
-            return -1;
-        }
-        
-        if(primerParcial < o.primerParcial) {
-            return 1;
-        }
-        
-        return 0;                
-    }
+    public String toString() {
+        return "Estudiante{" + "primerParcial=" + primerParcial + ", segundoParcial=" + segundoParcial + ", examenFinal=" + examenFinal + ", zona=" + zona + '}';
+    }        
 }

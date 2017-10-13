@@ -28,7 +28,7 @@ public class Menu {
     }
     
     public void promedioEstudiantes() {
-        listaEstudiantes.promedioAlumnos();
+        System.out.println("El promedio es: " + listaEstudiantes.promedioAlumnos());
     }
     
     public void ordenarPromedioEstudiantes() {

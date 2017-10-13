@@ -6,7 +6,10 @@
 package Manejador;
 
 import Objeto.Estudiante;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 /**
@@ -33,16 +36,25 @@ public class ListaEstudiantes {
     public ListaEstudiantes(Estudiante estudiante, Estudiante[] listaEstudiantes) {
         this.estudiante = estudiante;
         this.listaEstudiantes = listaEstudiantes;
+        for(int i =0; i < listaEstudiantes.length; i++) {
+            listaEstudiantes[i] = new Estudiante();
+        }
     }
     
     public ListaEstudiantes(int numero) {
         estudiante = new Estudiante();
-        listaEstudiantes = new Estudiante[numero];        
+        listaEstudiantes = new Estudiante[numero];   
+        for(int i =0; i < listaEstudiantes.length; i++) {
+            listaEstudiantes[i] = new Estudiante();
+        }
     }
     
     public ListaEstudiantes() {
         estudiante = new Estudiante();
-        listaEstudiantes = new Estudiante[2];        
+        listaEstudiantes = new Estudiante[3];  
+        for(int i =0; i < listaEstudiantes.length; i++) {
+            listaEstudiantes[i] = new Estudiante();
+        }
     }
     
     public void agregarEstudiante() {
@@ -50,6 +62,8 @@ public class ListaEstudiantes {
         Scanner scanner = new Scanner(System.in);
         
         for(int i=0; i < listaEstudiantes.length; i++) {
+            
+            estudiante = new Estudiante();
             
             System.out.println("Ingrese la nota del primer parcial");
             estudiante.setPrimerParcial(scanner.nextInt());        
@@ -67,10 +81,12 @@ public class ListaEstudiantes {
     public void mostrarAlumnos() {
         
         for(Estudiante estudiante: listaEstudiantes) {
+            System.out.println("_______________________________________________________");
             System.out.println("Nota primer parcial: " + estudiante.getPrimerParcial());
             System.out.println("Nota segundo parcial: " + estudiante.getSegundoParcial());
             System.out.println("Nota examen final: " + estudiante.getExamenFinal());
             System.out.println("Nota zona total: " + estudiante.getZona());
+            System.out.println("_______________________________________________________");
         }        
     }
     
@@ -95,16 +111,25 @@ public class ListaEstudiantes {
     }  
     
     public void ordenarPromedio() {
+                
+        System.out.println("Array ordenado por primer parcial");       
         
-        Arrays.sort(listaEstudiantes);
-        System.out.println("Array ordenado por primer parcial");
+        Arrays.sort(listaEstudiantes, Comparator.comparing(Estudiante::getPrimerParcial));        
+        //imprimeArrayPersonas(listaEstudiantes);                
+        
+        //ArrayList<Estudiante> infos = new ArrayList<Estudiante>();                
+        //Collections.sort(infos, Comparator.comparingInt(Estudiante::getPrimerParcial).reversed());
         
         for(Estudiante estudiante: listaEstudiantes) {
-            System.out.println("Primer parcial: " + estudiante.getPrimerParcial());
-            System.out.println("Segundo parcial: " + estudiante.getSegundoParcial());
-            System.out.println("Examen final: " + estudiante.getExamenFinal());
-            System.out.println("Zona: " + estudiante.getZona());
+            System.out.println("_______________________________________________________");
+            System.out.println("Primer parcial: " + estudiante.getPrimerParcial());            
+            System.out.println("_______________________________________________________");
         }
-        
     }
+    
+    /*public void imprimeArrayPersonas(Estudiante[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println((i+1) + ". " + array[i].getPrimerParcial());
+        }
+    }*/
 }
